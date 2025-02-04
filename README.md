@@ -10,7 +10,7 @@ No, this template is free and public for anyone to use. You are welcome to utili
 - Download the source code from [here](https://github.com/iiDk-the-actual/iis.Plugin.Template/releases/latest)
 - Change your `<GamePath>` (Gorilla Tag directory) in `Directory.Build.props` if required
 - Remove and re-add the ii's Stupid Menu dependency if required
-- Change the plugin namespace by right clicking `StupidPlugin` at the top of your Solution Explorer (the one with C# next to it), renaming it, then syncing the namespaces 
+- Change the plugin namespace by right clicking `StupidPlugin` at the top of your Solution Explorer (.csproj, the one with C# next to it), renaming it, then syncing the namespaces 
 - Change the plugin name and description in `Plugin.cs`
 - Edit the plugin methods following their provided descriptions
 - Build with `Ctrl` + `Shift` + `B`, it will get put in your custom plugins folder automatically

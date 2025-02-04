@@ -3,6 +3,7 @@ ii's Plugin Template is a template used for developing custom plugins for ii's S
 
 ## Do I need permission to use this?
 No, this template is free and public for anyone to use. You are welcome to utilize it for your projects, modify it to suit your needs, and share it with others. We believe in a collaborative and open community where resources are accessible to all.
+
 ---
 
 # Installation

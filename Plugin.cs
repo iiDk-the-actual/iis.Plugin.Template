@@ -8,7 +8,7 @@ namespace StupidPlugin
     public class Plugin
     {
         /*
-            Plugin template used for ii's Stupid Menu 5.5.0+
+            Plugin template used for ii's Stupid Menu 6.1.0+
 
             If you've ever created a menu before, this should be easy:
                 + GetIndex(ButtonName); Gets a button's ButtonInfo
@@ -32,8 +32,8 @@ namespace StupidPlugin
             UnityEngine.Debug.Log("Plugin " + Name + " has been enabled!");
 
             int category = AddCategory("Plugin Mods");
-            AddButton(GetCategory("Main"), new ButtonInfo { buttonText = "Plugin Mods", method = delegate { buttonsType = category; pageNumber = 0; }, isTogglable = false, toolTip = "Brings you to a category for plugins." });
-            AddButton(category, new ButtonInfo { buttonText = "Exit Plugin Mods", method =() => Settings.ReturnToMain(), isTogglable = false, toolTip = "Returns you back to the main page." });
+            AddButton(GetCategory("Main"), new ButtonInfo { buttonText = "Plugin Mods", method = delegate { currentCategoryIndex = category; }, isTogglable = false, toolTip = "Brings you to a category for plugins." });
+            AddButton(category, new ButtonInfo { buttonText = "Exit Plugin Mods", method =() => currentCategoryName = "Main", isTogglable = false, toolTip = "Returns you back to the main page." });
 
             AddButton(category, new ButtonInfo { buttonText = "Right Trigger Fly <color=grey>[</color><color=green>RT</color><color=grey>]</color>", method = () => RightTriggerFly(), toolTip = "Returns you back to the main page." });
         }
@@ -66,8 +66,8 @@ namespace StupidPlugin
         {
             if (rightTrigger > 0.5f)
             {
-                GorillaLocomotion.Player.Instance.transform.position += GorillaTagger.Instance.headCollider.transform.forward * Time.deltaTime * flySpeed;
-                GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GorillaLocomotion.GTPlayer.Instance.transform.position += GorillaTagger.Instance.headCollider.transform.forward * Time.deltaTime * Movement.flySpeed;
+                GorillaLocomotion.GTPlayer.Instance.GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
         }
     }

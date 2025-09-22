@@ -1,7 +1,8 @@
-﻿using static iiMenu.Menu.Main;
-using iiMenu.Classes;
+using static iiMenu.Menu.Main;
+using iiMenu.Classes.Menu;
 using iiMenu.Mods;
 using UnityEngine;
+using iiMenu.Managers;
 
 namespace StupidPlugin
 {
@@ -32,7 +33,7 @@ namespace StupidPlugin
             LogManager.Log("Plugin " + Name + " has been enabled!");
 
             int category = AddCategory("Plugin Mods");
-            AddButton(GetCategory("Main"), new ButtonInfo { buttonText = "Plugin Mods", method =() => currentCategoryIndex = category, isTogglable = false, toolTip = "Brings you to a category for plugins." });
+            AddButton(GetCategory("Main"), new ButtonInfo { buttonText = "Plugin Mods", method = () => currentCategoryIndex = category, isTogglable = false, toolTip = "Brings you to a category for plugins." });
 
             AddButtons(
                 category,
@@ -73,7 +74,7 @@ namespace StupidPlugin
             if (rightTrigger > 0.5f)
             {
                 GorillaLocomotion.GTPlayer.Instance.transform.position += GorillaTagger.Instance.headCollider.transform.forward * Time.deltaTime * Movement.flySpeed;
-                GorillaLocomotion.GTPlayer.Instance.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GorillaLocomotion.GTPlayer.Instance.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             }
         }
     }

@@ -32,14 +32,14 @@ namespace StupidPlugin
         {
             LogManager.Log("Plugin " + Name + " has been enabled!");
 
-            int category = AddCategory("Plugin Mods");
-            AddButton(GetCategory("Main"), new ButtonInfo { buttonText = "Plugin Mods", method = () => currentCategoryIndex = category, isTogglable = false, toolTip = "Brings you to a category for plugins." });
+            int category = AddCategory(Name);
+            AddButton(GetCategory("Main"), new ButtonInfo { buttonText = Name, method = () => currentCategoryIndex = category, isTogglable = false, toolTip = "Brings you to a category for plugins." });
 
             AddButtons(
                 category,
                 new ButtonInfo[]
                 {
-                    new ButtonInfo { buttonText = "Exit Plugin Mods", method =() => currentCategoryName = "Main", isTogglable = false, toolTip = "Returns you back to the main page." },
+                    new ButtonInfo { buttonText = "Exit Example Plugin", method =() => currentCategoryName = "Main", isTogglable = false, toolTip = "Returns you back to the main page." },
                     new ButtonInfo { buttonText = "Right Trigger Fly <color=grey>[</color><color=green>RT</color><color=grey>]</color>", method = () => RightTriggerFly(), toolTip = "Returns you back to the main page." }
                 }
             );
@@ -51,8 +51,8 @@ namespace StupidPlugin
         {
             LogManager.Log("Plugin " + Name + " has been disabled!");
 
-            RemoveCategory("Plugin Mods");
-            RemoveButton(GetCategory("Main"), "Plugin Mods");
+            RemoveCategory(Name);
+            RemoveButton(GetCategory("Main"), Name);
         }
 
         // This runs every frame before the mods
